@@ -1,0 +1,31 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "This is my blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kingobaino1/blog-app.git"
+  },
+  "author": "Ibeh Kingsley Obinna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kingobaino1/blog-app/issues"
+  },
+  "homepage": "https://github.com/Kingobaino1/blog-app#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/node": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "nodemon": "^2.0.18"
+  }
+}
