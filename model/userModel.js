@@ -6,13 +6,13 @@ const usersModel = new Schema({
   name: { type: String, required: true },
   posts: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'Post'
     }
   ],
   comments: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: 'Comment'
     }
   ]

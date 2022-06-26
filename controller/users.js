@@ -1,4 +1,5 @@
 import User from '../model/userModel';
+import Post from '../model/postModel';
 
 const createUser = async(req, res) => {
   const data = new User({
@@ -15,7 +16,7 @@ const createUser = async(req, res) => {
 
 const getAllUsers = async(req, res) => {
   try {
-    const users = await User.find();
+    const users = await User.find({}).populate('posts');
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -25,7 +26,8 @@ const getAllUsers = async(req, res) => {
 const getOneUser = async(req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    res.status(200).json(user);
+    const post = await Post.find({ 'author': user._id})
+    res.status(200).json({ user: user, posts: post });
   } catch (error) {
     res.status(500).json({ error: error.message });
   };
